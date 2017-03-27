@@ -22,11 +22,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2L1-wO-bb5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Make Habits" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2L1-wO-bb5">
                                 <rect key="frame" x="33" y="20" width="120" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Eat more fruit
-and vegetable</string>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -49,7 +47,7 @@ and vegetable</string>
                                     <constraint firstAttribute="width" constant="128" id="G4w-Zc-OZD"/>
                                     <constraint firstAttribute="height" constant="128" id="QWM-wg-QbR"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Apple"/>
+                                <state key="normal" title="Button" image="Brain"/>
                                 <connections>
                                     <action selector="addToDB:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kA3-EC-4pF"/>
                                 </connections>
@@ -60,7 +58,7 @@ and vegetable</string>
                                     <constraint firstAttribute="height" constant="128" id="Xp4-Yp-N52"/>
                                     <constraint firstAttribute="width" constant="128" id="c4f-9C-vhw"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Salad"/>
+                                <state key="normal" title="Button" image="Muscle"/>
                                 <connections>
                                     <action selector="addToDB:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dCI-Kt-XwW"/>
                                 </connections>
@@ -110,6 +108,14 @@ and vegetable</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZeT-g3-qWV">
+                                <rect key="frame" x="258" y="318" width="101" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Clear Habits"/>
+                                <connections>
+                                    <action selector="clearHabitsBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eAw-LU-Isx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -120,15 +126,21 @@ and vegetable</string>
                             <constraint firstAttribute="trailingMargin" secondItem="6Su-we-Msb" secondAttribute="trailing" constant="-16" id="fWE-gD-Ujd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XwZ-O9-p2L" secondAttribute="trailing" constant="228" id="hpo-7o-YCx"/>
                             <constraint firstAttribute="leadingMargin" secondItem="NhL-Pq-gic" secondAttribute="leading" id="iwP-Dm-KgS"/>
+                            <constraint firstItem="ZeT-g3-qWV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="242" id="nL7-nq-rkn"/>
                             <constraint firstItem="1Sg-Vz-0iL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="83" id="nX6-fI-qjs"/>
                             <constraint firstItem="6Su-we-Msb" firstAttribute="top" secondItem="XwZ-O9-p2L" secondAttribute="bottom" constant="8" id="oU3-IQ-SEf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1Sg-Vz-0iL" secondAttribute="trailing" id="ovf-dJ-Mck"/>
                             <constraint firstItem="6Su-we-Msb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="rzS-gZ-kbz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZeT-g3-qWV" secondAttribute="trailing" id="sv9-0z-C88"/>
                             <constraint firstItem="3SK-oT-HcI" firstAttribute="top" secondItem="NhL-Pq-gic" secondAttribute="bottom" constant="16" id="tVd-d4-lve"/>
                             <constraint firstItem="CpG-6M-wG5" firstAttribute="centerX" secondItem="1Sg-Vz-0iL" secondAttribute="centerX" id="u6C-Wh-CDs"/>
+                            <constraint firstItem="6Su-we-Msb" firstAttribute="top" secondItem="ZeT-g3-qWV" secondAttribute="bottom" constant="4" id="xZT-oA-1oe"/>
                             <constraint firstAttribute="leadingMargin" secondItem="XwZ-O9-p2L" secondAttribute="leading" id="yr0-FV-tA6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="6Su-we-Msb" id="wYg-qb-pIb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -136,7 +148,7 @@ and vegetable</string>
         </scene>
     </scenes>
     <resources>
-        <image name="Apple" width="128" height="128"/>
-        <image name="Salad" width="128" height="128"/>
+        <image name="Brain" width="256" height="256"/>
+        <image name="Muscle" width="256" height="256"/>
     </resources>
 </document>
